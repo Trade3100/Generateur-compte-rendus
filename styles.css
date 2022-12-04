@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#all-content {
+    height: 297mm;
+    width: 210mm;
+    border: black solid 1px;
+}
+
+header {
+    height: 32%;
+    width: 95%;
+    border: #c4bea8 solid 1px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#logo {
+    width: 100%;
+    height: 37%;
+    background-color: #7f7f7f;
+    color: #ffc000;
+    display: flex;
+    border-bottom: #c4bea8 solid 2px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+#logo img {
+    height: 100px;
+    width: auto;
+    margin-right: 50px;
+}
+
+#club-name {
+    font-size: 0.8em;
+    margin-left: 50px;
+}
+
+#C-R {
+    height: 30%;
+    width: 100%;
+    background-color: #ebe9e2;
+    font-size: 2em;
+    color: #ffc000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: #c4bea8 solid 2px;
+}
+
+#reunion {
+    height: 18%;
+    width: 100%;
+    font-size: 1.2em;
+    color: #ffc000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#reunion h3 {
+    height: 65%;
+}
+
+#reunion span {
+    height: 35%;
+    width: 100%;
+    background-color: #ebe9e2;
+    border-bottom: #c4bea8 solid 1px;
+    border-top: 1px #c4bea8 solid;
+}
+
+#details {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#details div {
+    display: flex;
+    flex-direction: column;
+    width: 34%;
+}
+
+.date, .projet {
+    border-right: #c4bea8 solid 1px;
+}
+
+.last {
+    width: 34%;
+}
+
+.static-text {
+    font-size: 1em;
+    color: #ffc000;
+    text-align: center;
+    height: 50%;
+    border-bottom: #c4bea8 solid 1px;
+}
+
+.var-text {
+    font-size: 1em;
+    color: black;
+    text-align: center;
+    background-color: #ebe9e2;
+    height: 50%;
+}
+
+.enchor {
+    margin-top: 30px;
+}
+
+.first-section div h3 {
+    font-size: 1.2em;
+    color: #ffc000;
+    margin: auto;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.separator {
+    width: 95%;
+    background-color: #ffc000;
+    height: 4px;
+    margin: auto;
+}
+
+.situation {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    border: #c4bea8 solid 1px;
+    border-top: 0;
+    margin-top: 30px;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.first-row {
+    width: 40%;
+    border-right: #c4bea8 solid 1px;
+}
+
+.second-row {
+    width: 20%;
+    border-right: #c4bea8 solid 1px;
+}
+
+.third-row {
+    width: 40%;
+}
+
+.abscents, .retard, .heure, .Justification-abscence, .justification-retard, .duree, .ordre {
+    background-color: #ebe9e2;
+    color: #ffc000;
+    font-size: 1.25em;
+    border-bottom: #c4bea8 solid 1px;
+    border-top: #c4bea8 solid 1px;
+}
+
+.row div {
+    height: 30px;
+    text-align: center;
+}
+
+.third-section div h3 {
+    font-size: 1.2em;
+    color: #ffc000;
+    margin: auto;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+
+.tache {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    border: #c4bea8 solid 1px;
+    text-align: center;
+    /*visibility: hidden;*/
+    /*display: none;*/
+}
+
+.table-1 {
+    margin-top: 30px;
+}
+
+
+.tache-1{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    border: #c4bea8 solid 1px;
+    text-align: center;
+}
+
+
+
+.title-col {
+    background-color: #7f7f7f;
+    height: 30px;
+    color: #FFF;
+}
+
+.dead {
+    background-color: #ff0000;
+}
+
+.ligne {
+    width: 25%;
+}
+
+.tache-content {
+    height: auto;
+}
+
+.ligne-1, .ligne-2, .ligne-3, .ligne-4 {
+    border-right: #c4bea8 solid 1px;
+}
+

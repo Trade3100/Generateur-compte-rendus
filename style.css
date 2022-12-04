@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px ;
+}
+
+body {
+    background-color: #1F1A24;
+}
+
+main {
+    background-color: #433e47;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+    margin-top: 40px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+form {
+    width: 100%;
+}
+
+.info-header {
+    width: 100%;
+}
+
+.info-header div {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+input[type="text"], textarea, select {
+    width: 60%;
+    background-color: #3700B3;
+    padding: 15px 22px;
+    border: grey solid 1px;
+    color: white;
+    border-radius: 7px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border: 3px solid #555;
+    outline: none;
+}
+
+.radio-input {
+    display: flex;
+    margin-left: 20px;
+}
+
+.radio-input p {
+    margin-left: 5px;
+}
+
+.radio-input-first {
+    margin-top: 10px;
+}
+
+.radio-input-second{
+    margin-bottom: 20px;
+}
+
+.number-task {
+    margin-left: 15px;
+    width: 20%;
+}
+
+.divider {
+    width: 70%;
+    height: 5px;
+    background-color: aquamarine;
+}
+
+.partition-ordre {
+    margin-bottom: 50px;
+}
+
+.title-section {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.remarques {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.div-remarques {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.task-2-p, .task-3-p, .task-4-p, .task-5-p, .task-2-n, .task-3-n, .task-4-n, .task-5-n {
+    display: none;
+    visibility: hidden;
+} 

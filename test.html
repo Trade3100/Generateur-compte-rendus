@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PDF GENERATOR</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="pic"><img src="enactus.png" /></div>
+        <main>
+            <h1>Générateur de compte rendu</h1>
+            <p>Veillez entrer les information nécessaires</p>
+            <form action="pdf.html" onsubmit="getData()">
+                <section class="info-header">
+                    <div class="partition partition-name">  
+                        <label id="name-label" for="name">Nom et Prénom: *</label><br />
+                        <input 
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="John Doe"
+                            class="inputs name"
+                            required
+                        />
+                    </div>
+                    <div class="partition partition-nb">  
+                        <label id="nb-label" for="nb">Numéro de réunion; *</label><br />
+                        <input 
+                            id="nb"
+                            name="nb"
+                            type="text"
+                            placeholder="Réunion numéro: "
+                            class="inputs nb"
+                            required
+                        />
+                    </div>
+                    <div class="partition partition-cellule-or-project">
+                        <label id="type-project-label" for="type-project">Choisisez le type correspondant: *</label> <br />
+                        <span class="radio-input radio-input-first">
+                            <input type="radio" id="type-project" value="Project" name="type"/>
+                            <p>Project</p>
+                        </span>
+                        <span class="radio-input radio-input-second">
+                            <input type="radio" id="type-cellule" value="Cellule" name="type"/>
+                            <p>Cellule</p>
+                        </span>
+                        <span class="cellule-project-name">
+                            <label id="project-label" for="Project">Nom du projet/cellule: </label><br/>
+                            <input
+                                type="text"
+                                id="project"
+                                name="project"
+                                placeholder="projet/cellule"
+                                class="inputs project"
+                                required 
+                            />
+                        </span>
+                    </div>
+                    <div class="partition partition-absents">
+                        <label id="absents-label" for="absents">Noms des Absents: </label><br/>
+                        <textarea id="absents" name="absents" placeholder="Noms des absents" class="inputs absents"></textarea>
+                    </div>
+                    <div class="partition partition-absents-just">
+                        <label id="absents-just-label" for="absents-just">Justification d'absence: </label><br/>
+                        <input 
+                            type="text"
+                            id="absents-just"
+                            name="absents-just"
+                            class="inputs absents-just"
+                        />
+                    </div>
+                    <div class="partition partition-late">
+                        <label id="late-label" for="late">Noms des retardataires: </label><br/>
+                        <textarea id="late" name="late" placeholder="Noms des retardataires" class="inputs late"></textarea>
+                    </div>
+                    <div class="partition partition-late-just">
+                        <label id="late-just-label" for="late-just">Justification d'absence: </label><br/>
+                        <input 
+                            type="text"
+                            id="late-just"
+                            name="late-just"
+                            class="inputs late-just"
+                        />
+                    </div>
+                    <div class="partition partition-hour">
+                        <label id="hour-label" for="hour">Heure de la réunion: </label><br/>
+                        <input 
+                            type="text"
+                            id="hour"
+                            name="hour"
+                            placeholder="eg: 15:30"
+                            class="inputs hour"
+                            required
+                        />
+                    </div>
+                    <div class="partition partition-duration">
+                        <label id="duration-label" for="duration">Durée de la réunion: </label><br/>
+                        <input 
+                            type="text"
+                            id="duration"
+                            name="duration"
+                            placeholder="eg: 30 minutes"
+                            class="inputs duration"
+                        />
+                    </div>
+                    <div class="partition partition-ordre">
+                        <label id="ordre-label" for="order">Ordre du jour: </label><br/>
+                        <textarea id="order" name="order" placeholder="Ordre du jour" class="inputs order"></textarea>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 class="title-section">Taches précédentes: </h2>
+                    <div class="partition partition-number-task">
+                        <label id="number-task-label" for="number-p-task">Nombres de taches: </label>
+                        <select class="number-task number-p-task" id="number-p-task" name="number-p-task" onchange="numberPreviousTasks()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="tasks-previous">
+                        <div class="task-1-p">
+                            <div class="task-1-p-name-partition">
+                                <label id="task-1-p-name-label" for="task-1-p-name">Nom première tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-1-p-name"
+                                    name="task-1-p-name"
+                                    class="inputs task-1-p-name"
+                                    placeholder="Nom première tache"
+                                />
+                            </div>
+                            <div class="task-1-p-desc-partition">
+                                <label id="task-1-p-desc-label" for="task-1-p-desc">Description première tache: </label><br/>
+                                <textarea id="task-1-p-desc" name="task-1-p-desc" placeholder="Description première tache" class="task-1-p-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-2-p">
+                            <div class="task-2-p-name-partition">
+                                <label id="task-2-p-name-label" for="task-2-p-name">Nom deuxième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-2-p-name"
+                                    name="task-2-p-name"
+                                    class="inputs task-2-p-name"
+                                    placeholder="Nom deuxième tache"
+                                />
+                            </div>
+                            <div class="task-2-p-desc-partition">
+                                <label id="task-2-p-desc-label" for="task-2-p-desc">Description deuxième tache: </label><br/>
+                                <textarea id="task-2-p-desc" name="task-2-p-desc" placeholder="Description deuxième tache" class="task-2-p-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-3-p">
+                            <div class="task-3-p-name-partition">
+                                <label id="task-3-p-name-label" for="task-3-p-name">Nom troisième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-3-p-name"
+                                    name="task-3-p-name"
+                                    class="inputs task-3-p-name"
+                                    placeholder="Nom troisième tache"
+                                />
+                            </div>
+                            <div class="task-3-p-desc-partition">
+                                <label id="task-3-p-desc-label" for="task-3-p-desc">Description troisième tache: </label><br/>
+                                <textarea id="task-3-p-desc" name="task-3-p-desc" placeholder="Description troisième tache" class="task-3-p-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-4-p">
+                            <div class="task-4-p-name-partition">
+                                <label id="task-4-p-name-label" for="task-4-p-name">Nom quatrième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-4-p-name"
+                                    name="task-4-p-name"
+                                    class="inputs task-4-p-name"
+                                    placeholder="Nom quatrième tache"
+                                />
+                            </div>
+                            <div class="task-4-p-desc-partition">
+                                <label id="task-4-p-desc-label" for="task-4-p-desc">Description quatrième tache: </label><br/>
+                                <textarea id="task-4-p-desc" name="task-4-p-desc" placeholder="Description quatrième tache" class="task-4-p-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-5-p">
+                            <div class="task-5-p-name-partition">
+                                <label id="task-5-p-name-label" for="task-5-p-name">Nom cinquième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-5-p-name"
+                                    name="task-5-p-name"
+                                    class="inputs task-5-p-name"
+                                    placeholder="Nom cinquième tache"
+                                />
+                            </div>
+                            <div class="task-5-p-desc-partition">
+                                <label id="task-5-p-desc-label" for="task-5-p-desc">Description cinquième tache: </label><br/>
+                                <textarea id="task-5-p-desc" name="task-5-p-desc" placeholder="Description cinquième tache" class="task-5-p-desc"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 class="title-section">Taches suivantes: </h2>
+                    <div class="partition partition-number-task">
+                        <label id="number-task-label" for="number-n-task">Nombres de taches: </label>
+                        <select class="number-task number-n-task" id="number-n-task" name="number-n-task" onchange="numberNextTasks()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="tasks-previous">
+                        <div class="task-1-n">
+                            <div class="task-1-n-name-partition">
+                                <label id="task-1-n-name-label" for="task-1-n-name">Nom première tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-1-n-name"
+                                    name="task-1-n-name"
+                                    class="inputs task-1-n-name"
+                                    placeholder="Nom première tache"
+                                />
+                            </div>
+                            <div class="task-1-n-desc-partition">
+                                <label id="task-1-n-desc-label" for="task-1-n-desc">Description première tache: </label><br/>
+                                <textarea id="task-1-n-desc" name="task-1-n-desc" placeholder="Description première tache" class="task-1-n-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-2-n">
+                            <div class="task-2-n-name-partition">
+                                <label id="task-2-n-name-label" for="task-2-n-name">Nom deuxième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-2-n-name"
+                                    name="task-2-n-name"
+                                    class="inputs task-2-n-name"
+                                    placeholder="Nom deuxième tache"
+                                />
+                            </div>
+                            <div class="task-2-n-desc-partition">
+                                <label id="task-2-n-desc-label" for="task-2-n-desc">Description deuxième tache: </label><br/>
+                                <textarea id="task-2-n-desc" name="task-2-n-desc" placeholder="Description deuxième tache" class="task-2-n-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-3-n">
+                            <div class="task-3-n-name-partition">
+                                <label id="task-3-n-name-label" for="task-3-n-name">Nom troisième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-3-n-name"
+                                    name="task-3-n-name"
+                                    class="inputs task-3-n-name"
+                                    placeholder="Nom troisième tache"
+                                />
+                            </div>
+                            <div class="task-3-n-desc-partition">
+                                <label id="task-3-n-desc-label" for="task-3-n-desc">Description troisième tache: </label><br/>
+                                <textarea id="task-3-n-desc" name="task-3-n-desc" placeholder="Description troisième tache" class="task-3-n-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-4-n">
+                            <div class="task-4-n-name-partition">
+                                <label id="task-4-n-name-label" for="task-4-n-name">Nom quatrième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-4-n-name"
+                                    name="task-4-n-name"
+                                    class="inputs task-4-n-name"
+                                    placeholder="Nom quatrième tache"
+                                />
+                            </div>
+                            <div class="task-4-n-desc-partition">
+                                <label id="task-4-n-desc-label" for="task-4-n-desc">Description quatrième tache: </label><br/>
+                                <textarea id="task-4-n-desc" name="task-4-n-desc" placeholder="Description quatrième tache" class="task-4-n-desc"></textarea>
+                            </div>
+                        </div>
+                        <div class="task-5-n">
+                            <div class="task-5-n-name-partition">
+                                <label id="task-5-n-name-label" for="task-5-n-name">Nom cinquième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-5-n-name"
+                                    name="task-5-n-name"
+                                    class="inputs task-5-n-name"
+                                    placeholder="Nom cinquième tache"
+                                />
+                            </div>
+                            <div class="task-5-n-desc-partition">
+                                <label id="task-5-n-desc-label" for="task-5-n-desc">Description cinquième tache: </label><br/>
+                                <textarea id="task-5-n-desc" name="task-5-n-desc" placeholder="Description cinquième tache" class="task-5-n-desc"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <h2 class="title-section">Remarques: </h2>
+                    <div class="div-remarques">
+                        <textarea class="remarques" name="remarques" id="remarques"></textarea>
+                    </div>
+                </section>
+            </form>
+        </main>
+        <script>
+function getData()
+{
+    //saving the values in local storage
+    localStorage.setItem("name_value", document.getElementById("name").value);
+    localStorage.setItem("type_value", document.querySelector('input[name="type"]:checked').value);
+    localStorage.setItem("nb_meet_value", document.getElementById("nb").value);
+    localStorage.setItem("project_name_value", document.getElementById("project").value);
+    localStorage.setItem("absent_value", document.getElementById("absents").value);
+    localStorage.setItem("absent_value_just", document.getElementById("absents-just").value);
+    localStorage.setItem("late_value", document.getElementById("late").value);
+    localStorage.setItem("late_just_value", document.getElementById("late-just").value);
+    localStorage.setItem("hour_value", document.getElementById("hour").value);
+    localStorage.setItem("duration_value", document.getElementById("duration").value);
+    localStorage.setItem("order_value", document.getElementById("order").value);
+    localStorage.setItem("task-name-p-1", document.getElementById("task-1-p-name").value);
+    localStorage.setItem("task-desc-p-1", document.getElementById("task-1-p-desc").value);
+    localStorage.setItem("task-name-p-2", document.getElementById("task-2-p-name").value);
+    localStorage.setItem("task-desc-p-2", document.getElementById("task-2-p-desc").value);
+    localStorage.setItem("task-name-p-3", document.getElementById("task-3-p-name").value);
+    localStorage.setItem("task-desc-p-3", document.getElementById("task-3-p-desc").value);
+    localStorage.setItem("task-name-p-4", document.getElementById("task-4-p-name").value);
+    localStorage.setItem("task-desc-p-4", document.getElementById("task-4-p-desc").value);
+    localStorage.setItem("task-name-p-5", document.getElementById("task-5-p-name").value);
+    localStorage.setItem("task-desc-p-5", document.getElementById("task-5-p-desc").value);
+    localStorage.setItem("task-name-n-1", document.getElementById("task-1-n-name").value);
+    localStorage.setItem("task-desc-n-1", document.getElementById("task-1-n-desc").value);
+    localStorage.setItem("task-name-n-2", document.getElementById("task-2-n-name").value);
+    localStorage.setItem("task-desc-n-2", document.getElementById("task-2-n-desc").value);
+    localStorage.setItem("task-name-n-3", document.getElementById("task-3-n-name").value);
+    localStorage.setItem("task-desc-n-3", document.getElementById("task-3-n-desc").value);
+    localStorage.setItem("task-name-n-4", document.getElementById("task-4-n-name").value);
+    localStorage.setItem("task-desc-n-4", document.getElementById("task-4-n-desc").value);
+    localStorage.setItem("task-name-n-5", document.getElementById("task-5-n-name").value);
+    localStorage.setItem("task-desc-n-5", document.getElementById("task-5-n-desc").value);
+    localStorage.setItem("remarks-value", document.getElementById("remarques").value);
+}   
+
+function numberPreviousTasks() {
+    var num = document.getElementById('number-p-task').value;
+
+    switch (num) {
+        case '1':
+            document.querySelector(".task-2-p").style.visibility = "hidden";
+            document.querySelector(".task-2-p").style.display = "none";
+            document.querySelector(".task-3-p").style.visibility = "hidden";
+            document.querySelector(".task-3-p").style.display = "none";
+            document.querySelector(".task-4-p").style.visibility = "hidden";
+            document.querySelector(".task-4-p").style.display = "none";
+            document.querySelector(".task-5-p").style.visibility = "hidden";
+            document.querySelector(".task-5-p").style.display = "none";
+            break;
+        case '2':
+            document.querySelector(".task-2-p").style.visibility = "visible";
+            document.querySelector(".task-2-p").style.display = "block";
+            document.querySelector(".task-3-p").style.visibility = "hidden";
+            document.querySelector(".task-3-p").style.display = "none";
+            document.querySelector(".task-4-p").style.visibility = "hidden";
+            document.querySelector(".task-4-p").style.display = "none";
+            document.querySelector(".task-5-p").style.visibility = "hidden";
+            document.querySelector(".task-5-p").style.display = "none";
+            break;
+        case '3':
+            document.querySelector(".task-2-p").style.visibility = "visible";
+            document.querySelector(".task-2-p").style.display = "block";
+            document.querySelector(".task-3-p").style.visibility = "visible";
+            document.querySelector(".task-3-p").style.display = "block";
+            document.querySelector(".task-4-p").style.visibility = "hidden";
+            document.querySelector(".task-4-p").style.display = "none";
+            document.querySelector(".task-5-p").style.visibility = "hidden";
+            document.querySelector(".task-5-p").style.display = "none";
+            break;
+        case '4':
+            document.querySelector(".task-2-p").style.visibility = "visible";
+            document.querySelector(".task-2-p").style.display = "block";
+            document.querySelector(".task-3-p").style.visibility = "visible";
+            document.querySelector(".task-3-p").style.display = "block";
+            document.querySelector(".task-4-p").style.visibility = "visible";
+            document.querySelector(".task-4-p").style.display = "block";
+            document.querySelector(".task-5-p").style.visibility = "hidden";
+            document.querySelector(".task-5-p").style.display = "none";
+            break;
+        case '5':
+            document.querySelector(".task-2-p").style.visibility = "visible";
+            document.querySelector(".task-2-p").style.display = "block";
+            document.querySelector(".task-3-p").style.visibility = "visible";
+            document.querySelector(".task-3-p").style.display = "block";
+            document.querySelector(".task-4-p").style.visibility = "visible";
+            document.querySelector(".task-4-p").style.display = "block";
+            document.querySelector(".task-5-p").style.visibility = "visible";
+            document.querySelector(".task-5-p").style.display = "block";
+            break;
+    }
+}
+
+function numberNextTasks() {
+    var num = document.getElementById('number-n-task').value;
+
+    switch (num) {
+        case '1':
+            document.querySelector(".task-2-n").style.visibility = "hidden";
+            document.querySelector(".task-2-n").style.display = "none";
+            document.querySelector(".task-3-n").style.visibility = "hidden";
+            document.querySelector(".task-3-n").style.display = "none";
+            document.querySelector(".task-4-n").style.visibility = "hidden";
+            document.querySelector(".task-4-n").style.display = "none";
+            document.querySelector(".task-5-n").style.visibility = "hidden";
+            document.querySelector(".task-5-n").style.display = "none";
+            break;
+        case '2':
+            document.querySelector(".task-2-n").style.visibility = "visible";
+            document.querySelector(".task-2-n").style.display = "block";
+            document.querySelector(".task-3-n").style.visibility = "hidden";
+            document.querySelector(".task-3-n").style.display = "none";
+            document.querySelector(".task-4-n").style.visibility = "hidden";
+            document.querySelector(".task-4-n").style.display = "none";
+            document.querySelector(".task-5-n").style.visibility = "hidden";
+            document.querySelector(".task-5-n").style.display = "none";
+            break;
+        case '3':
+            document.querySelector(".task-2-n").style.visibility = "visible";
+            document.querySelector(".task-2-n").style.display = "block";
+            document.querySelector(".task-3-n").style.visibility = "visible";
+            document.querySelector(".task-3-n").style.display = "block";
+            document.querySelector(".task-4-n").style.visibility = "hidden";
+            document.querySelector(".task-4-n").style.display = "none";
+            document.querySelector(".task-5-n").style.visibility = "hidden";
+            document.querySelector(".task-5-n").style.display = "none";
+            break;
+        case '4':
+            document.querySelector(".task-2-n").style.visibility = "visible";
+            document.querySelector(".task-2-n").style.display = "block";
+            document.querySelector(".task-3-n").style.visibility = "visible";
+            document.querySelector(".task-3-n").style.display = "block";
+            document.querySelector(".task-4-n").style.visibility = "visible";
+            document.querySelector(".task-4-n").style.display = "block";
+            document.querySelector(".task-5-n").style.visibility = "hidden";
+            document.querySelector(".task-5-n").style.display = "none";
+            break;
+        case '5':
+            document.querySelector(".task-2-n").style.visibility = "visible";
+            document.querySelector(".task-2-n").style.display = "block";
+            document.querySelector(".task-3-n").style.visibility = "visible";
+            document.querySelector(".task-3-n").style.display = "block";
+            document.querySelector(".task-4-n").style.visibility = "visible";
+            document.querySelector(".task-4-n").style.display = "block";
+            document.querySelector(".task-5-n").style.visibility = "visible";
+            document.querySelector(".task-5-n").style.display = "block";
+            break;
+    }
+}
+        </script>
+    </body>
+</html>

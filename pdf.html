@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Générateur PDF</title>
+</head>
+
+<body>
+  <div id="element">
+    <header>
+      <div id="logo">
+        <div id="club-name">
+          <h2>ENACTUS</h2>
+          <h3>École Mohammadia D'Ingénieurs</h3>
+        </div>
+        <img src="enactus.png" />
+      </div>
+      <div id="C-R">
+        <h1>COMPTE RENDU</h1>
+      </div>
+      <div id="reunion">
+        <h3>REUNION N°<span id="meet">01</span></h3>
+        <span></span>
+      </div>
+      <div id="details">
+        <div class="date">
+          <span class="static-text">DATE</span>
+          <span class="var-text" id="date">VOID</span>
+        </div>
+        <div class="projet">
+          <span class="static-text" id="type">PROJET</span>
+          <span class="var-text" id="project">VOID</span>
+        </div>
+        <div class="last">
+          <span class="static-text">REDIGE PAR</span>
+          <span class="var-text" id="name">VOID</span>
+        </div>
+      </div>
+    </header>
+    <section class="first-section">
+      <div class="enchor">
+        <h3>RESUME</h3>
+        <div class="separator"></div>
+      </div>
+      <div class="situation">
+        <div class="first-row row">
+          <div class="abscents">Liste des abscents</div>
+          <div class="abscents-text">VOID</div>
+          <div class="retard">Liste des retardataires</div>
+          <div class="reatard-text">VOID</div>
+          <div class="heure">Heure de la réunion</div>
+          <div class="heure-text">VOID</div>
+        </div>
+        <div class="second-row row">
+          <div class="Justification-abscence">Justification</div>
+          <div class="Justification-abscence-text">VOID</div>
+          <div class="justification-retard">Justification</div>
+          <div class="justification-reatrd-text">VOID</div>
+          <div class="duree">Durée</div>
+          <div class="duree-text">VOID</div>
+        </div>
+        <div class="third-row row">
+          <div class="ordre">Ordre du jour</div>
+          <div class="ordre-text">VOID</div>
+        </div>
+      </div>
+    </section>
+    <section class="third-section">
+      <div class="enchor">
+        <h3>AVANCEMENT DES TÂCHES DE LA RÉUNION PRÉCÉDENTE :</h3>
+        <div class="separator"></div>
+        <div class="table-1">
+          <div class="tache-1-p tache">
+            <div class="ligne-1 ligne">
+              <div class="title-col">TÂCHE</div>
+              <div class="tache-content" id="title-task-1">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="title-col">DESCRIPTION</div>
+              <div class="tache-content" id="desc-task-1">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="title-col">PILOTE</div>
+              <div class="tache-content" id="pilote-task-1">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="title-col">Avancement</div>
+              <div class="tache-content" id="avancement-task-1">VOID</div>
+            </div>
+            <div class="ligne-5 ligne">
+              <div class="title-col dead">DEADLINE</div>
+              <div class="tache-content" id="deadline-task-1">VOID</div>
+            </div>
+          </div>
+          <div class="tache-2-p tache hide">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-2">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-2">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-2">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="avancement-task-2">VOID</div>
+            </div>
+            <div class="ligne-5 ligne">
+              <div class="tache-content" id="deadline-task-2">VOID</div>
+            </div>
+          </div>
+          <div class="tache-3-p tache hide">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-3">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-3">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-3">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="avancement-task-3">VOID</div>
+            </div>
+            <div class="ligne-5 ligne">
+              <div class="tache-content" id="deadline-task-3">VOID</div>
+            </div>
+          </div>
+          <div class="tache-4-p tache hide">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-4">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-4">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-4">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="avancement-task-4">VOID</div>
+            </div>
+            <div class="ligne-5 ligne">
+              <div class="tache-content" id="deadline-task-4">VOID</div>
+            </div>
+          </div>
+          <div class="tache-5-p tache hide">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-5">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-5">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-5">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="avancement-task-5">VOID</div>
+            </div>
+            <div class="ligne-5 ligne">
+              <div class="tache-content" id="deadline-task-5">VOID</div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="third-section">
+      <div class="enchor">
+        <h3>TÂCHES À FAIRE POUR LA PROCHAINE RÉUNION:</h3>
+        <div class="separator"></div>
+        <div class="table-1">
+          <div class="tache-1">
+            <div class="ligne-1 ligne">
+              <div class="title-col">TÂCHE</div>
+              <div class="tache-content" id="title-task-n-1">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="title-col">DESCRIPTION</div>
+              <div class="tache-content" id="desc-task-n-1">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="title-col">PILOTE</div>
+              <div class="tache-content" id="pilote-task-n-1">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="title-col dead">DEADLINE</div>
+              <div class="tache-content" id="deadline-task-n-1">VOID</div>
+            </div>
+          </div>
+          <div class="tache-2-n">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-n-2">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-n-2">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-n-2">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="deadline-task-n-2">VOID</div>
+            </div>
+          </div>
+          <div class="tache-3-n">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-n-3">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-n-3">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-n-3">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="deadline-task-n-3">VOID</div>
+            </div>
+          </div>
+          <div class="tache-4-n">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-n-4">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-n-4"></div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-n-4">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="deadline-task-n-4">VOID</div>
+            </div>
+          </div>
+          <div class="tache-5-n">
+            <div class="ligne-1 ligne">
+              <div class="tache-content" id="title-task-n-5">VOID</div>
+            </div>
+            <div class="ligne-2 ligne">
+              <div class="tache-content" id="desc-task-n-5">VOID</div>
+            </div>
+            <div class="ligne-3 ligne">
+              <div class="tache-content" id="pilote-task-n-5">VOID</div>
+            </div>
+            <div class="ligne-4 ligne">
+              <div class="tache-content" id="deadline-task-n-5">VOID</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="fourth-section">
+        <div class="enchor">
+          <div class="separator"></div>
+      </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.js"></script>
+<script>
+
+  var number_p_task_pdf = localStorage.getItem("number-p-task");
+  var number_n_task_pdf = localStorage.getItem("number-n-task");
+  
+  switch (number_p_task_pdf) {
+        case '1':
+            document.querySelector(".tache-2-p").style.visibility = "hidden";
+            document.querySelector(".tache-2-p").style.display = "none";
+            document.querySelector(".tache-3-p").style.visibility = "hidden";
+            document.querySelector(".tache-3-p").style.display = "none";
+            document.querySelector(".tache-4-p").style.visibility = "hidden";
+            document.querySelector(".tache-4-p").style.display = "none";
+            document.querySelector(".tache-5-p").style.visibility = "hidden";
+            document.querySelector(".tache-5-p").style.display = "none";
+            break;
+        case '2':
+            document.querySelector(".tache-2-p").style.visibility = "visible";
+            document.querySelector(".tache-2-p").style.display = "block";
+            document.querySelector(".tache-3-p").style.visibility = "hidden";
+            document.querySelector(".tache-3-p").style.display = "none";
+            document.querySelector(".tache-4-p").style.visibility = "hidden";
+            document.querySelector(".tache-4-p").style.display = "none";
+            document.querySelector(".tache-5-p").style.visibility = "hidden";
+            document.querySelector(".tache-5-p").style.display = "none";
+            break;
+        case '3':
+            document.querySelector(".tache-2-p").style.visibility = "visible";
+            document.querySelector(".tache-2-p").style.display = "block";
+            document.querySelector(".tache-3-p").style.visibility = "visible";
+            document.querySelector(".tache-3-p").style.display = "block";
+            document.querySelector(".tache-4-p").style.visibility = "hidden";
+            document.querySelector(".tache-4-p").style.display = "none";
+            document.querySelector(".tache-5-p").style.visibility = "hidden";
+            document.querySelector(".tache-5-p").style.display = "none";
+            break;
+        case '4':
+            document.querySelector(".tache-2-p").style.visibility = "visible";
+            document.querySelector(".tache-2-p").style.display = "block";
+            document.querySelector(".tache-3-p").style.visibility = "visible";
+            document.querySelector(".tache-3-p").style.display = "block";
+            document.querySelector(".tache-4-p").style.visibility = "visible";
+            document.querySelector(".tache-4-p").style.display = "block";
+            document.querySelector(".tache-5-p").style.visibility = "hidden";
+            document.querySelector(".tache-5-p").style.display = "none";
+            break;
+        case '5':
+            document.querySelector(".tache-2-p").style.visibility = "visible";
+            document.querySelector(".tache-2-p").style.display = "block";
+            document.querySelector(".tache-3-p").style.visibility = "visible";
+            document.querySelector(".tache-3-p").style.display = "block";
+            document.querySelector(".tache-4-p").style.visibility = "visible";
+            document.querySelector(".tache-4-p").style.display = "block";
+            document.querySelector(".tache-5-p").style.visibility = "visible";
+            document.querySelector(".tache-5-p").style.display = "block";
+            break;
+    }
+
+    
+  switch (number_n_task_pdf) {
+        case '1':
+            document.querySelector(".tache-2-n").style.visibility = "hidden";
+            document.querySelector(".tache-2-n").style.display = "none";
+            document.querySelector(".tache-3-n").style.visibility = "hidden";
+            document.querySelector(".tache-3-n").style.display = "none";
+            document.querySelector(".tache-4-n").style.visibility = "hidden";
+            document.querySelector(".tache-4-n").style.display = "none";
+            document.querySelector(".tache-5-n").style.visibility = "hidden";
+            document.querySelector(".tache-5-n").style.display = "none";
+            break;
+        case '2':
+            document.querySelector(".tache-2-n").style.visibility = "visible";
+            document.querySelector(".tache-2-n").style.display = "block";
+            document.querySelector(".tache-3-n").style.visibility = "hidden";
+            document.querySelector(".tache-3-n").style.display = "none";
+            document.querySelector(".tache-4-n").style.visibility = "hidden";
+            document.querySelector(".tache-4-n").style.display = "none";
+            document.querySelector(".tache-5-n").style.visibility = "hidden";
+            document.querySelector(".tache-5-n").style.display = "none";
+            break;
+        case '3':
+            document.querySelector(".tache-2-n").style.visibility = "visible";
+            document.querySelector(".tache-2-n").style.display = "block";
+            document.querySelector(".tache-3-n").style.visibility = "visible";
+            document.querySelector(".tache-3-n").style.display = "block";
+            document.querySelector(".tache-4-n").style.visibility = "hidden";
+            document.querySelector(".tache-4-n").style.display = "none";
+            document.querySelector(".tache-5-n").style.visibility = "hidden";
+            document.querySelector(".tache-5-n").style.display = "none";
+            break;
+        case '4':
+            document.querySelector(".tache-2-n").style.visibility = "visible";
+            document.querySelector(".tache-2-n").style.display = "block";
+            document.querySelector(".tache-3-n").style.visibility = "visible";
+            document.querySelector(".tache-3-n").style.display = "block";
+            document.querySelector(".tache-4-n").style.visibility = "visible";
+            document.querySelector(".tache-4-n").style.display = "block";
+            document.querySelector(".tache-5-n").style.visibility = "hidden";
+            document.querySelector(".tache-5-n").style.display = "none";
+            break;
+        case '5':
+            document.querySelector(".tache-2-n").style.visibility = "visible";
+            document.querySelector(".tache-2-n").style.display = "block";
+            document.querySelector(".tache-3-n").style.visibility = "visible";
+            document.querySelector(".tache-3-n").style.display = "block";
+            document.querySelector(".tache-4-n").style.visibility = "visible";
+            document.querySelector(".tache-4-n").style.display = "block";
+            document.querySelector(".tache-5-n").style.visibility = "visible";
+            document.querySelector(".tache-5-n").style.display = "block";
+            break;
+    }
+
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+
+  document.getElementById("name").innerHTML = localStorage.getItem("name_value");
+  document.getElementById("meet").innerHTML = localStorage.getItem("nb_meet_value");
+  document.getElementById("date").innerHTML = dd + '/' + mm + '/' + yyyy;
+  document.getElementById("type").innerHTML = localStorage.getItem("type_value");
+  document.getElementById("project").innerHTML = localStorage.getItem("project_name_value");
+  document.querySelector(".abscents-text").innerHTML = localStorage.getItem("absent_value");
+  document.querySelector(".reatard-text").innerHTML = localStorage.getItem("late_value");
+  document.querySelector(".heure-text").innerHTML = localStorage.getItem("hour_value");
+  document.querySelector(".Justification-abscence-text").innerHTML = localStorage.getItem("absent_value_just");
+  document.querySelector(".justification-reatrd-text").innerHTML = localStorage.getItem("late_just_value");
+  document.querySelector(".duree-text").innerHTML = localStorage.getItem("duration_value");
+  document.querySelector(".ordre-text").innerHTML = localStorage.getItem("order_value");
+  document.getElementById("title-task-1").innerHTML = localStorage.getItem("task-name-p-1");
+  document.getElementById("desc-task-1").innerHTML = localStorage.getItem("task-desc-p-1");
+  document.getElementById("pilote-task-1").innerHTML = localStorage.getItem("task-pilote-p-1");
+  document.getElementById("deadline-task-1").innerHTML = localStorage.getItem("task-dead-p-1");
+  document.getElementById("title-task-2").innerHTML = localStorage.getItem("task-name-p-2");
+  document.getElementById("desc-task-2").innerHTML = localStorage.getItem("task-desc-p-2");
+  document.getElementById("pilote-task-2").innerHTML = localStorage.getItem("task-pilote-p-2");
+  document.getElementById("deadline-task-2").innerHTML = localStorage.getItem("task-dead-p-2");
+  document.getElementById("title-task-3").innerHTML = localStorage.getItem("task-name-p-3");
+  document.getElementById("desc-task-3").innerHTML = localStorage.getItem("task-desc-p-3");
+  document.getElementById("pilote-task-3").innerHTML = localStorage.getItem("task-pilote-p-3");
+  document.getElementById("deadline-task-3").innerHTML = localStorage.getItem("task-dead-p-3");
+  document.getElementById("title-task-4").innerHTML = localStorage.getItem("task-name-p-4");
+  document.getElementById("desc-task-4").innerHTML = localStorage.getItem("task-desc-p-4");
+  document.getElementById("pilote-task-4").innerHTML = localStorage.getItem("task-pilote-p-4");
+  document.getElementById("deadline-task-4").innerHTML = localStorage.getItem("task-dead-p-4");
+  document.getElementById("title-task-5").innerHTML = localStorage.getItem("task-name-p-5");
+  document.getElementById("desc-task-5").innerHTML = localStorage.getItem("task-desc-p-5");
+  document.getElementById("pilote-task-5").innerHTML = localStorage.getItem("task-pilote-p-5");
+  document.getElementById("deadline-task-5").innerHTML = localStorage.getItem("task-dead-p-5");
+  document.getElementById("title-task-n-1").innerHTML = localStorage.getItem("task-name-n-1");
+  document.getElementById("desc-task-n-1").innerHTML = localStorage.getItem("task-desc-n-1");
+  document.getElementById("pilote-task-n-1").innerHTML = localStorage.getItem("task-pilote-n-1");
+  document.getElementById("deadline-task-n-1").innerHTML = localStorage.getItem("task-dead-n-1");
+  document.getElementById("title-task-n-2").innerHTML = localStorage.getItem("task-name-n-2");
+  document.getElementById("desc-task-n-2").innerHTML = localStorage.getItem("task-desc-n-2");
+  document.getElementById("pilote-task-n-2").innerHTML = localStorage.getItem("task-pilote-n-2");
+  document.getElementById("deadline-task-n-2").innerHTML = localStorage.getItem("task-dead-n-2");
+  document.getElementById("title-task-n-3").innerHTML = localStorage.getItem("task-name-n-3");
+  document.getElementById("desc-task-n-3").innerHTML = localStorage.getItem("task-desc-n-3");
+  document.getElementById("pilote-task-n-3").innerHTML = localStorage.getItem("task-pilote-n-3");
+  document.getElementById("deadline-task-n-3").innerHTML = localStorage.getItem("task-dead-n-3");
+  document.getElementById("title-task-n-4").innerHTML = localStorage.getItem("task-name-n-4");
+  document.getElementById("desc-task-n-4").innerHTML = localStorage.getItem("task-desc-n-4");
+  document.getElementById("pilote-task-n-4").innerHTML = localStorage.getItem("task-pilote-n-4");
+  document.getElementById("deadline-task-n-4").innerHTML = localStorage.getItem("task-dead-n-4");
+  document.getElementById("title-task-n-5").innerHTML = localStorage.getItem("task-name-n-5");
+  document.getElementById("desc-task-n-5").innerHTML = localStorage.getItem("task-desc-n-5");
+  document.getElementById("pilote-task-n-5").innerHTML = localStorage.getItem("task-pilote-n-5");
+  document.getElementById("deadline-task-n-5").innerHTML = localStorage.getItem("task-dead-n-5");
+
+  let element = document.getElementById('element')
+  html2pdf(element,{
+  filename: 'output.pdf',
+  image: { type: 'jpeg', quality: 1 },
+  html2canvas: { scale: 4, useCORS: true, logging: true, letterRendering: true },
+  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+  pagebreak: { avoid: 'div' }
+ })
+</script>
+
+</html>
