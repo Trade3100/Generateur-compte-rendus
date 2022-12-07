@@ -84,6 +84,11 @@ input[type="text"]:focus, textarea:focus {
     width: 20%;
 }
 
+.task-2-p, .task-3-p, .task-4-p, .task-5-p, .task-2-n, .task-3-n, .task-4-n, .task-5-n {
+    display: none;
+    visibility: hidden;
+} 
+
 .divider {
     width: 70%;
     height: 5px;
@@ -100,6 +105,7 @@ input[type="text"]:focus, textarea:focus {
     margin-top: 20px;
 }
 
+
 .remarques {
     width: 90%;
     height: 100px;
@@ -114,8 +120,3 @@ input[type="text"]:focus, textarea:focus {
     justify-content: center;
     flex-direction: column;
 }
-
-.task-2-p, .task-3-p, .task-4-p, .task-5-p, .task-2-n, .task-3-n, .task-4-n, .task-5-n {
-    display: none;
-    visibility: hidden;
-} 

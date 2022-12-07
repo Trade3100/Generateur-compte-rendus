@@ -78,6 +78,7 @@ header {
     border-top: 1px #c4bea8 solid;
 }
 
+
 #details {
     height: 15%;
     width: 100%;
@@ -184,9 +185,16 @@ header {
     margin-bottom: 10px;
 }
 
-
-.tache {
+.table-1{
     width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tache-1-p {
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -201,12 +209,12 @@ header {
 }
 
 
-.tache-1{
-    width: 95%;
+.tache{
+    width: 100%;
     display: flex;
-    flex-direction: row;
     margin: auto;
     border: #c4bea8 solid 1px;
+    border-top: 0 ;
     text-align: center;
 }
 
@@ -223,14 +231,33 @@ header {
 }
 
 .ligne {
-    width: 25%;
+    width: 20%;
 }
 
 .tache-content {
     height: auto;
 }
 
-.ligne-1, .ligne-2, .ligne-3, .ligne-4 {
+.ligne-1, .ligne-2, .ligne-3, .ligne-4, .ligne-1-n, .ligne-2-n, .ligne-3-n {
     border-right: #c4bea8 solid 1px;
 }
 
+.ligne-1-n, .ligne-2-n, .ligne-3-n, .ligne-4-n {
+    width: 25%;
+}
+
+
+.ordre-text {
+    margin: auto auto;
+}
+
+
+.remarques {
+    width: 95%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.tache-2-p, .tache-4-p, .tache-2-n, .tache-4-n {
+    background-color: #ebe9e2;
+} 

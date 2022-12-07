@@ -149,6 +149,16 @@
                                     placeholder="pilote première tache"
                                 />
                             </div>
+                            <div class="task-1-p-avancement-partition">
+                                <label id="task-1-p-avancement-label" for="task-1-p-avancement">avancement de la première tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-1-p-avancement"
+                                    name="task-1-p-avancement"
+                                    class="inputs task-1-p-avancement"
+                                    placeholder="avancement première tache"
+                                />
+                            </div>
                             <div class="task-1-p-dead-partition">
                                 <label id="task-1-p-dead-label" for="task-1-p-dead">deadline première tache: </label><br/>
                                 <input
@@ -183,6 +193,16 @@
                                     name="task-2-p-pilote"
                                     class="inputs task-2-p-pilote"
                                     placeholder="pilote deuxième tache"
+                                />
+                            </div>
+                            <div class="task-2-p-avancement-partition">
+                                <label id="task-2-p-avancement-label" for="task-2-p-avancement">avancement de la deuxième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-2-p-avancement"
+                                    name="task-2-p-avancement"
+                                    class="inputs task-2-p-avancement"
+                                    placeholder="avancement deuxième tache"
                                 />
                             </div>
                             <div class="task-2-p-dead-partition">
@@ -221,6 +241,16 @@
                                     placeholder="pilote troisième tache"
                                 />
                             </div>
+                            <div class="task-3-p-avancement-partition">
+                                <label id="task-3-p-avancement-label" for="task-3-p-avancement">avancement de la troisième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-3-p-avancement"
+                                    name="task-3-p-avancement"
+                                    class="inputs task-3-p-avancement"
+                                    placeholder="avancement troisième tache"
+                                />
+                            </div>
                             <div class="task-3-p-dead-partition">
                                 <label id="task-3-p-dead-label" for="task-3-p-dead">deadline troisième tache: </label><br/>
                                 <input
@@ -257,6 +287,16 @@
                                     placeholder="pilote quatrième tache"
                                 />
                             </div>
+                            <div class="task-4-p-avancement-partition">
+                                <label id="task-4-p-avancement-label" for="task-4-p-avancement">avancement de la quatrième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-4-p-avancement"
+                                    name="task-4-p-avancement"
+                                    class="inputs task-4-p-avancement"
+                                    placeholder="avancement quatrième tache"
+                                />
+                            </div>
                             <div class="task-4-p-dead-partition">
                                 <label id="task-4-p-dead-label" for="task-4-p-dead">deadline quatrième tache: </label><br/>
                                 <input
@@ -291,6 +331,16 @@
                                     name="task-5-p-pilote"
                                     class="inputs task-5-p-pilote"
                                     placeholder="pilote cinquième tache"
+                                />
+                            </div>
+                            <div class="task-5-p-avancement-partition">
+                                <label id="task-5-p-avancement-label" for="task-5-p-avancement">avancement de la cinquième tache: </label><br/>
+                                <input
+                                    type="text"
+                                    id="task-5-p-avancement"
+                                    name="task-5-p-avancement"
+                                    class="inputs task-5-p-avancement"
+                                    placeholder="avancement première tache"
                                 />
                             </div>
                             <div class="task-5-p-dead-partition">
@@ -567,6 +617,12 @@ function getData()
     localStorage.setItem("remarks-value", document.getElementById("remarques").value);
     localStorage.setItem("number-p-task", document.getElementById('number-p-task').value);
     localStorage.setItem("number-n-task", document.getElementById('number-n-task').value);
+    localStorage.setItem("task-avancement-1-p", document.getElementById("task-1-p-avancement").value);
+    localStorage.setItem("task-avancement-2-p", document.getElementById("task-2-p-avancement").value);
+    localStorage.setItem("task-avancement-3-p", document.getElementById("task-3-p-avancement").value);
+    localStorage.setItem("task-avancement-4-p", document.getElementById("task-4-p-avancement").value);
+    localStorage.setItem("task-avancement-5-p", document.getElementById("task-5-p-avancement").value);
+    localStorage.setItem("remarques-value", document.getElementById("remarques").value);
 }   
 
 function numberPreviousTasks() {
